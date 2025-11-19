@@ -40,3 +40,25 @@ const backspaceCompare = (s, t) => {
   return helper(s) === helper(t) ? true : false;
 };
 // console.log(backspaceCompare("ab#c", "ad#cas##"));
+
+
+const str = 'React Native Developer';
+
+const reverse = str => {
+  let output = '';
+  let key = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    if (str[i] === ' ') {
+      output = output + ' ' + key;
+      key = '';
+    } else {
+      key = str[i] + key;
+    }
+  }
+
+  output = output + ' ' + key;
+  return output;
+};
+
+console.log(reverse(str));
+//  Developer Native React
