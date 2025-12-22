@@ -56,6 +56,7 @@ const isMonotonic = (arr) => {
 const reverse = (arr, start, end) => {
   while (start < end) {
     [arr[start], arr[end]] = [arr[end], arr[start]];
+    start++;
     end--;
   }
   return arr;
