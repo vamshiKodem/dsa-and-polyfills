@@ -62,18 +62,12 @@ const pick = (arr) => {
     }
   }
 
-  const topFive = [];
-  let word = [];
-  for (key in hash) {
-    word.push({ word: key, times: hash[key] });
-  }
-  word = word.sort((a, b) => b.times - a.times);
-  word.forEach((val, i) => {
-    if (i <= 4) {
-      topFive.push(val);
-    }
-  });
-  return topFive;
+  const data = Object.entries(hash)
+    .map((data) => {
+      return { word: data[0], times: data[1] };
+    })
+    .sort((a, b) => b.times - a.times);
+  return data.slice(0, 5);
 };
 
 console.log(pick(arr));
