@@ -9,8 +9,6 @@ const groupAnagrams = (strs) => {
       obj[sortedStrs[i]] = [strs[i]];
     }
   }
-  console.log(obj);
-
   return Object.values(obj);
 };
 
