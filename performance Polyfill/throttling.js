@@ -12,7 +12,7 @@ function throttling(cb, delay) {
     }
     timer = setTimeout(() => {
       cb.apply(context, args);
-      timer = undefined;
+      timer = null;
     }, delay);
   };
 }
