@@ -14,30 +14,32 @@ const promiseReject = (value) => {
 const promiseAll = (promises) => {
   return new Promise((resolve, reject) => {
     const output = [];
+    let completed = 0;
     promises.forEach((promise, index) => {
       promise
-        .then((data) => {
-          output[index] = data;
-          if (promises.length - 1 === index) {
+        .then((res) => {
+          output[index] = res;
+          completed++;
+          if (completed === promises.length) {
             resolve(output);
           }
         })
-        .catch((error) => {
-          reject(error);
+        .catch((err) => {
+          reject(err);
         });
     });
   });
 };
 
-// promiseAll([
-//   Promise.resolve(10),
-//   Promise.resolve(20),
-//   Promise.resolve("not working"),
-// ])
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((data) => console.log(data));
+promiseAll([
+  Promise.resolve(10),
+  Promise.resolve(20),
+  Promise.resolve("not working"),
+])
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((data) => console.log(data));
 
 // Polyfill for Promise.allSettled
 const promiseAllSettled = (promises) => {
