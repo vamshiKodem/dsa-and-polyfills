@@ -81,4 +81,4 @@ Array.prototype.myFlat = function (depth) {
 };
 
 const arr = [1, 2, [3, 4, 5, [6, 7, [2, 2, [3, 3]]], 3], 2, 2];
-console.log(arr.myFlat(arr, 2));
+console.log(arr.myFlat(2));
