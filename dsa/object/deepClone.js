@@ -1,17 +1,22 @@
-const deepClone = (obj) => {
-  const output = {};
+const obj = { a: 1, b: { c: 2, z: [1, 2, { b: 1 }] } };
 
-  for(let key in obj){
-    if(typeof obj[key] === 'object'){
-      output[key] =  {...deepClone(obj[key])}
+const deepCopy = (obj) => {
+  if (obj === null || typeof obj !== "object") return obj;
+
+  const output = Array.isArray(obj) ? [] : {};
+
+  for (let key in obj) {
+    const current = obj[key];
+    if (typeof current === "object" && !Array.isArray(current)) {
+      output[key] = deepCopy(current);
+    } else if (typeof current === "object" && Array.isArray(current)) {
+      output[key] = current.map((curr) => deepCopy(curr));
     } else {
-      output[key] = obj[key]
+      output[key] = current;
     }
   }
-  return output;
-}
 
-const obj = {a:1,b:{c:2}};
-const clone = deepClone(obj);
-console.log(clone); // {a:1,b:{c:2}}
-console.log(clone !== obj && clone.b !== obj.b); // true
+  return output;
+};
+
+console.log(deepCopy(obj));
