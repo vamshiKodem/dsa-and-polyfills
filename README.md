@@ -18,8 +18,8 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 
 - Longest Substring Without Repeating Characters (completed)
 - Valid Anagram (completed)
-- Group Anagrams
-- String Compression
+- Group Anagrams (completed)
+- String Compression (Completed)
 - Reverse Words in a String
 - Valid Palindrome (ignore special characters)
 
