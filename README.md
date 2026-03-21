@@ -9,8 +9,8 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 - Two Sum (completed)
 - Contains Duplicate (completed)
 - Product of Array Except Self
-- Subarray Sum Equals K
-- Maximum Subarray (Kadane’s Algorithm)
+- Subarray Sum Equals K (completed)
+- Maximum Subarray (Kadane’s Algorithm) (Completed)
 - Merge Intervals
 - Insert Interval
 
