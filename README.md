@@ -11,8 +11,8 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 - Product of Array Except Self
 - Subarray Sum Equals K (completed)
 - Maximum Subarray (Kadane’s Algorithm) (Completed)
-- Merge Intervals
-- Insert Interval
+- Merge Intervals (Not required for frontend)
+- Insert Interval (Not required for frontend)
 
 ## Strings
 
@@ -26,9 +26,9 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 ## Sliding Window / Two Pointers
 
 - Longest Substring Without Repeating Characters (completed)
-- Minimum Window Substring
-- Container With Most Water
-- Move Zeroes
+- Minimum Window Substring (Not required for frontend)
+- Container With Most Water (Not required for frontend)
+- Move Zeroes (Completed)
 - Remove Duplicates from Sorted Array
 
 ## Stack & Queue

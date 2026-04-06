@@ -18,20 +18,21 @@ const data = {
   },
 };
 
-let sum = 0;
-const sumCalculate = (data) => {
-  if (typeof data === "number") {
-    sum = sum + data;
-  } else if (typeof data === "object" && !Array.isArray(data)) {
-    for (let key in data) {
-      sumCalculate(data[key]);
+const sumCalculate = (obj) => {
+  let count = 0;
+
+  if (typeof obj === "number") {
+    return obj;
+  } else if (typeof obj === "object" && Array.isArray(obj)) {
+    for (let i = 0; i < obj.length; i++) {
+      count = count + sumCalculate(obj[i], count);
     }
-  } else if (typeof data === "object" && Array.isArray(data)) {
-    for (let i = 0; i < data.length; i++) {
-      sumCalculate(data[i]);
+  } else if (typeof obj === "object" && !Array.isArray(obj)) {
+    for (let key in obj) {
+      count = count + sumCalculate(obj[key], count);
     }
   }
-  return sum;
+  return count;
 };
 
 console.log(sumCalculate(data));
