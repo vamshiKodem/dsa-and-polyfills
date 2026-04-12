@@ -29,23 +29,21 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 - Minimum Window Substring (Not required for frontend)
 - Container With Most Water (Not required for frontend)
 - Move Zeroes (Completed)
-- Remove Duplicates from Sorted Array
+- Remove Duplicates from Sorted Array (completed)
 
 ## Stack & Queue
 
-- Valid Parentheses
-- Min Stack
-- Next Greater Element
-- Evaluate Reverse Polish Notation
-- Implement Queue using Stacks
-- LRU Cache
+- Valid Parentheses (Completed)
+- Min Stack (Not required for frontend)
+- Next Greater Element (Not required for frontend)
+- Evaluate Reverse Polish Notation (Completed)
 
 ## Recursion / Object Manipulation (JS Focus)
 
-- Deep Clone Object
-- Flatten Nested Object
-- Flatten Array
-- Nested Object Traversal
+- Deep Clone Object (Completed)
+- Flatten Nested Object (Completed)
+- Flatten Array (completed)
+- Nested Object Traversal (Completed)
 
 ## Linked List
 

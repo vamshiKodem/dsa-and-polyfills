@@ -1,21 +1,32 @@
 const obj = {
-  a: { b: 2, c: { d: 3 } },
-  e: 4,
+  a: 1,
+  b: {
+    c: 2,
+    d: {
+      e: 3,
+    },
+  },
 };
 
-const flat = (obj, parentKey, output) => {
+const flat = (obj, parent, output) => {
   for (let key in obj) {
-    const fullKey = parentKey ? `${parentKey}.${key}` : key;
-    if (typeof obj[key] === "object") {
-      flat(obj[key], key, output);
+    const newKey = parent ? `${parent}.${key}` : key;
+    if (
+      typeof obj[key] === "object" &&
+      !Array.isArray(obj[key]) &&
+      obj[key] !== null
+    ) {
+      flat(obj[key], newKey, output);
     } else {
-      output[fullKey] = obj[key];
+      output[newKey] = obj[key];
     }
   }
-
   return output;
 };
-
 console.log(flat(obj, "", {}));
 
-// {a.b: 2, c.d: 3, e: 4}
+// {
+//   "a": 1,
+//   "b.c": 2,
+//   "b.d.e": 3
+// }
