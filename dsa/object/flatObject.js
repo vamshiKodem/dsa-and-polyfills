@@ -8,7 +8,9 @@ const obj = {
   },
 };
 
-const flat = (obj, parent, output) => {
+const flat = (obj, parent) => {
+  let output = {};
+
   for (let key in obj) {
     const newKey = parent ? `${parent}.${key}` : key;
     if (
@@ -16,14 +18,14 @@ const flat = (obj, parent, output) => {
       !Array.isArray(obj[key]) &&
       obj[key] !== null
     ) {
-      flat(obj[key], newKey, output);
+      output = { ...output, ...flat(obj[key], newKey) };
     } else {
       output[newKey] = obj[key];
     }
   }
   return output;
 };
-console.log(flat(obj, "", {}));
+console.log(flat(obj, ""));
 
 // {
 //   "a": 1,
