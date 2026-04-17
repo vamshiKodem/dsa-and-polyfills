@@ -63,6 +63,47 @@ promiseAllSettled([
   Promise.reject("not working"),
 ]).then((res) => console.log(res));
 
+const p1 = new Promise((resolve) => setTimeout(() => resolve("First"), 1000));
+const p2 = new Promise((resolve) => setTimeout(() => resolve("Second"), 500));
+// Promise.race
+const promiseRace = (promises) => {
+  return new Promise((res, rej) => {
+    promises.forEach((promise) => {
+      Promise.resolve(promise).then(res).catch(rej);
+    });
+  });
+};
+
+console.log(promiseRace([p1, p2]));
+
+// Promise.any
+const promiseAny = (promises) => {
+  return new Promise((resolve, reject) => {
+    let errors = [];
+    let rejectedCount = 0;
+
+    if (promises.length === 0) {
+      reject(new AggregateError([], "All promises were rejected"));
+      return;
+    }
+
+    promises.forEach((p, index) => {
+      Promise.resolve(p)
+        .then(resolve)
+        .catch((err) => {
+          errors[index] = err;
+          rejectedCount++;
+
+          if (rejectedCount === promises.length) {
+            reject(new AggregateError(errors, "All promises were rejected"));
+          }
+        });
+    });
+  });
+};
+
+console.log(promiseAny([p1, p2]));
+
 // Polyfill for Promise with out async
 class MyPromise {
   isResolved = false;

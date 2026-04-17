@@ -45,39 +45,9 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 - Flatten Array (completed)
 - Nested Object Traversal (Completed)
 
-## Linked List
-
-- Reverse Linked List
-- Detect Cycle in Linked List
-- Merge Two Sorted Lists
-- Remove Nth Node From End
-
-## Trees
-
-- Binary Tree Level Order Traversal
-- Maximum Depth of Binary Tree
-- Inorder / Preorder / Postorder Traversal
-- Lowest Common Ancestor (Binary Tree)
-- Validate Binary Search Tree
-
-## Graphs (Basic)
-
-- Number of Islands
-- Flood Fill
-- Clone Graph
-- BFS / DFS Traversal
-
 ## Heap / Priority Queue
 
-- Top K Frequent Elements
-- Kth Largest Element in Array
-- Merge K Sorted Lists
-
-## Searching & Sorting
-
-- Binary Search
-- Search in Rotated Sorted Array
-- Find First and Last Position of Element
+- Top K Frequent Elements (Completed)
 
 ---
 
