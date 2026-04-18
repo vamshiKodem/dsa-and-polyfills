@@ -55,21 +55,21 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 
 ## Core JS Logic
 
-- Debounce
-- Throttle
-- Memoization Function
+- Debounce (completed)
+- Throttle (completed)
+- Memoization Function (completed)
 
 ## Promises
 
-- Promise.all
-- Promise.race
-- Promise.any (bonus)
+- Promise.all (completed)
+- Promise.race (completed)
+- Promise.any (bonus) (completed)
 
 ## Objects & Utilities
 
-- Deep Equal Function
+- Deep Equal Function (completed)
 - Event Emitter
-- Object Flattening
+- Object Flattening (completed)
 
 ---
 
