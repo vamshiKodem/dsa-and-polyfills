@@ -1,4 +1,5 @@
-// Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum, and return that sum.
+// Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum,
+//  and return that sum.
 
 const nums = [1, 2, 3, 4];
 
@@ -6,7 +7,7 @@ const maxSubArray = (nums) => {
   let sum = nums[0];
   let currentSum = nums[0];
   for (let i = 1; i < nums.length; i++) {
-    currentSum = Math.max(currentSum, currentSum + nums[i]);
+    currentSum = Math.max(nums[i], currentSum + nums[i]);
     sum = Math.max(currentSum, sum);
   }
   return sum;
