@@ -1,3 +1,6 @@
+// Given a string s, return the longest palindromic substring in s.Ex1: "babad"ans: "bab"
+// Ex2:  "cbbd"ans: "bb"Ex3: "sasas"ans: "sasas"
+
 # Dsa & Polyfill
 
 This repo contains the easy and medium solutions for the dsa for Arrays and Strings using javascript and also polyfills.
