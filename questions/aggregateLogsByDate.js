@@ -14,27 +14,36 @@ const logs = [
 const aggregateLogsByDate = (logs) => {
   const output = {};
 
-  logs.forEach(({ user, action, date }) => {
-    if (!output[date]) {
-      output[date] = {
-        totalActions: 0,
-        uniqueUsers: 0,
-        _user: new Set(),
-        actualActions: {},
+  logs.forEach((log) => {
+    if (log.date in output) {
+      const current = output[log.date];
+      output[log.date] = {
+        ...current,
+        users: current.users.add(log.user),
+        uniqueUsers: current.users.size,
+        totalActions: current.totalActions + 1,
+        actualActions: {
+          ...current.actualActions,
+          [log.action]: current.actualActions[log.action]
+            ? current.actualActions[log.action] + 1
+            : 1,
+        },
+      };
+    } else {
+      output[log.date] = {
+        totalActions: 1,
+        uniqueUsers: 1,
+        users: new Set([log.user]),
+        actualActions: {
+          [log.action]: 1,
+        },
       };
     }
-    const day = output[date];
-    day.totalActions += 1;
-    if (!day._user.has(user)) {
-      day._user.add(user);
-      day.uniqueUsers += 1;
-    }
-    day.actualActions[action] = (day.actualActions[action] || 0) + 1;
+  });
+  Object.keys(output).forEach((log) => {
+    delete output[log].users;
   });
 
-  Object.keys(output).forEach((date) => {
-    delete output[date]._user;
-  });
   return output;
 };
 
