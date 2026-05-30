@@ -20,3 +20,29 @@ const longestSubString = (str) => {
 };
 
 console.log(longestSubString(str));
+
+const longestSubstringChar = (str) => {
+  let left = 0;
+  const lastseen = {};
+  let window = "";
+  let output = "";
+
+  for (let i = 0; i < str.length; i++) {
+    while (str[i] in lastseen) {
+      window = window.slice(1);
+      delete lastseen[str[left]];
+      left++;
+    }
+
+    lastseen[str[i]] = 1;
+    window = window + str[i];
+
+    if (window.length > output.length) {
+      output = window;
+    }
+  }
+
+  return output;
+};
+
+console.log(longestSubstringChar("abcabcbb"));
