@@ -46,3 +46,31 @@ const longestSubstringChar = (str) => {
 };
 
 console.log(longestSubstringChar("abcabcbb"));
+
+const isUnique = (str) => {
+  const hash = {};
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] in hash) return false;
+    hash[str[i]] = 1;
+  }
+
+  return true;
+};
+
+const longestSubstringChar = (str) => {
+  let output = "";
+
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i; j < str.length; j++) {
+      const substring = str.substring(i, j + 1);
+      const isValidUnique = isUnique(substring);
+      if (isValidUnique && substring.length > output.length) {
+        output = substring;
+      }
+    }
+  }
+
+  return output;
+};
+
+console.log(longestSubstringChar("abcabcbb"));
