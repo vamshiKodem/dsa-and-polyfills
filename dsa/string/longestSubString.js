@@ -62,7 +62,7 @@ const longestSubstringChar = (str) => {
 
   for (let i = 0; i < str.length; i++) {
     for (let j = i; j < str.length; j++) {
-      const substring = str.substring(i, j + 1);
+      const substring = str.slice(i, j + 1);
       const isValidUnique = isUnique(substring);
       if (isValidUnique && substring.length > output.length) {
         output = substring;
