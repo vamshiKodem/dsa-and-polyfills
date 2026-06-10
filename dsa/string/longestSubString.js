@@ -23,26 +23,24 @@ console.log(longestSubString(str));
 
 const longestSubstringChar = (str) => {
   let left = 0;
-  const lastseen = {};
-  let window = "";
-  let output = "";
+  let map = new Map();
+  let output = 0;
+  let substring = "";
 
   for (let i = 0; i < str.length; i++) {
-    while (str[i] in lastseen) {
-      window = window.slice(1);
-      delete lastseen[str[left]];
+    while (map.has(str[i])) {
+      map.delete(str[left]);
       left++;
     }
-
-    lastseen[str[i]] = 1;
-    window = window + str[i];
-
-    if (window.length > output.length) {
-      output = window;
+    map.set(str[i], 1);
+    output = Math.max(output, map.size);
+    const innerSubstring = str.slice(left, i + 1);
+    if (innerSubstring.length > substring.length) {
+      substring = innerSubstring;
     }
   }
 
-  return output;
+  return substring;
 };
 
 console.log(longestSubstringChar("abcabcbb"));
