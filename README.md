@@ -87,67 +87,109 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 - Valid Parentheses
 - Top K Frequent Elements
 
-PascalTriangle.js
-arrayProblems.js
-canJump.js
-combinationSum.js
-combine.js
-evalRPN.js
-findSecondLargest.js
-flatObject.js
-intersection.js
-leaderInArray.js
-majorityElement.js
-maxProfilt.js
-maxProfit2.js
-maxSubArray.js
-mergeSortedArray.js
-mergeSortedArray2.js
-minSubArrayLength.js
-moveZeroes.js
-productExceptSelf.js
-removeDuplicates.js
-removeDuplicatesSorted2.js
-removeDuplicatesSortedArray.js
-removeElement.js
-rotateArray.js
-topKFrequent.js
-twoSum.js
-factorial.js
-missingNumber.js
-moveZeros.js
-calculateSum.js
-compareObject.js
-deepClone.js
-deepEqual.js
-mergeTwoObject.js
-removeDuplicate.js
-traverse.js
-debouncing.js
-memoization.js
-multipleFetch.js
-throttling.js
-compressString.js
-countVowels.js
-firstNonRepeatingCharacter.js
-groupAnagrams.js
-isAnagram.js
-isLongestPalindrome.js
-longestCommonPrefix.js
-longestSubString.js
-longestSubstringWithKDistinctChars.js
-maxFrequentChar.js
-palindrome.js
-reverseString.js
-sortByFrequency.js
-stringProblems.js
-validAnagram.js
-validParentheses.js
-aggregateLogsByDate.js
-currying.js
-getFilteredProducts.js
-interviewQuestions.js
-localStorage.js
-lruCache.js
+# Thing to look imp
+
+- How do you debug the app when app is crashing only in the physical device not on the simulator or emulator. Native approach
+- Write code for async storage fetch from the api and save locally
+- SBOM
+```
+unction ApiCache() {
+
+    const map = new Map();
+
+    function set(key, value, duration){
+        map.set(key, {value: value, time: Date.now(), duration: duration })
+    }
+
+    function get(key){
+        const data = map.get(key);
+        if( Date.now() - data.time < data.duration){
+            return data.value;
+        }
+        map.delete(key);
+        return null;
+    }
+
+    return {
+        set, get
+    }
+
+}
+
+const cache = new ApiCache();
+cache.set("user_101", { name: "Ankush" }, 5000);
+cache.get("user_101");
+// returns { name: "Ankush" } if called within 5 seconds
+// after 5 seconds
+console.log(cache.get("user_101")); // returns null
+setTimeout(() => {
+    console.log(cache.get("user_101"))
+}, 4900)<img width="966" height="1148" alt="image" src="https://github.com/user-attachments/assets/e93a49ce-3030-4d7a-8abe-f78e00b658d0" />
+
+```
+
+
+- PascalTriangle.js
+- arrayProblems.js
+- canJump.js
+- combinationSum.js
+- combine.js
+- evalRPN.js
+- findSecondLargest.js
+- flatObject.js
+- intersection.js
+- leaderInArray.js
+- majorityElement.js
+- maxProfilt.js
+- maxProfit2.js
+- maxSubArray.js
+- mergeSortedArray.js
+- mergeSortedArray2.js
+- minSubArrayLength.js
+- moveZeroes.js
+- productExceptSelf.js
+- removeDuplicates.js
+- removeDuplicatesSorted2.js
+- removeDuplicatesSortedArray.js
+- removeElement.js
+- rotateArray.js
+- topKFrequent.js
+- twoSum.js
+- factorial.js
+- missingNumber.js
+- moveZeros.js
+- calculateSum.js
+- compareObject.js
+- deepClone.js
+- deepEqual.js
+- mergeTwoObject.js
+- removeDuplicate.js
+- traverse.js
+- debouncing.js
+- memoization.js
+- multipleFetch.js
+- throttling.js
+- compressString.js
+- countVowels.js
+- firstNonRepeatingCharacter.js
+- groupAnagrams.js
+- isAnagram.js
+- isLongestPalindrome.js
+- longestCommonPrefix.js
+- longestSubString.js
+- longestSubstringWithKDistinctChars.js
+- maxFrequentChar.js
+- palindrome.js
+- reverseString.js
+- sortByFrequency.js
+- stringProblems.js
+- validAnagram.js
+- validParentheses.js
+- aggregateLogsByDate.js
+- currying.js
+- getFilteredProducts.js
+- interviewQuestions.js
+- localStorage.js
+- lruCache.js
 
 I am frontend dev with 7YOE (React native, react js and node js) mostly frontend is the list dsa is enough for frontend mostly light medium dsa
