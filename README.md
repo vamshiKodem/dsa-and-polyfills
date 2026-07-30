@@ -124,7 +124,7 @@ cache.get("user_101");
 console.log(cache.get("user_101")); // returns null
 setTimeout(() => {
     console.log(cache.get("user_101"))
-}, 4900)<img width="966" height="1148" alt="image" src="https://github.com/user-attachments/assets/e93a49ce-3030-4d7a-8abe-f78e00b658d0" />
+}, 4900)
 
 ```
 
