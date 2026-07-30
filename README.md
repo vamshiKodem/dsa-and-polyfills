@@ -93,7 +93,7 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 - Write code for async storage fetch from the api and save locally
 - SBOM
 ```
-unction ApiCache() {
+function ApiCache() {
 
     const map = new Map();
 
