@@ -92,6 +92,7 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 - How do you debug the app when app is crashing only in the physical device not on the simulator or emulator. Native approach
 - Write code for async storage fetch from the api and save locally
 - SBOM
+
 ```
 function ApiCache() {
 
@@ -127,7 +128,6 @@ setTimeout(() => {
 }, 4900)
 
 ```
-
 
 - PascalTriangle.js
 - arrayProblems.js
@@ -191,5 +191,6 @@ setTimeout(() => {
 - interviewQuestions.js
 - localStorage.js
 - lruCache.js
+- longestConsecutive.js
 
 I am frontend dev with 7YOE (React native, react js and node js) mostly frontend is the list dsa is enough for frontend mostly light medium dsa
