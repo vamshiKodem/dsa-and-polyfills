@@ -85,9 +85,29 @@ function ApiCache() {
     return data.value;
   }
 
+  function deleteKey(key) {
+    if (timerMap.has(key)) {
+      clearTimeout(timerMap.get(key));
+      timerMap.delete(key);
+    }
+
+    return cache.delete(key);
+  }
+
+  function clear() {
+    timerMap.forEach((timer) => {
+      clearTimeout(timer);
+    });
+
+    timerMap.clear();
+    cache.clear();
+  }
+
   return {
     set,
     get,
+    delete: deleteKey,
+    clear,
   };
 }
 

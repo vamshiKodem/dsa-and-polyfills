@@ -18,8 +18,8 @@ function LRUCache(capacity) {
 
     map.set(key, value);
     if (map.size > capacity) {
-      const lruKey = map.keys().next().value;
-      map.delete(lruKey);
+      const lruKey = Array.from(map.keys());
+      map.delete(lruKey[0]);
     }
   }
 
