@@ -92,42 +92,15 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 - How do you debug the app when app is crashing only in the physical device not on the simulator or emulator. Native approach
 - Write code for async storage fetch from the api and save locally
 - SBOM
+- Request Deduplication
+- Retry API
+- Concurrency Limiter
+- Promise Pool
+- Debounced Fetch
+- API Cache with Promise
+- Stale-While-Revalidate
 
-```
-function ApiCache() {
-
-    const map = new Map();
-
-    function set(key, value, duration){
-        map.set(key, {value: value, time: Date.now(), duration: duration })
-    }
-
-    function get(key){
-        const data = map.get(key);
-        if( Date.now() - data.time < data.duration){
-            return data.value;
-        }
-        map.delete(key);
-        return null;
-    }
-
-    return {
-        set, get
-    }
-
-}
-
-const cache = new ApiCache();
-cache.set("user_101", { name: "Ankush" }, 5000);
-cache.get("user_101");
-// returns { name: "Ankush" } if called within 5 seconds
-// after 5 seconds
-console.log(cache.get("user_101")); // returns null
-setTimeout(() => {
-    console.log(cache.get("user_101"))
-}, 4900)
-
-```
+# Completed
 
 - PascalTriangle.js
 - arrayProblems.js
@@ -192,5 +165,24 @@ setTimeout(() => {
 - localStorage.js
 - lruCache.js
 - longestConsecutive.js
+- apiCache.js
+- Retry API
 
 I am frontend dev with 7YOE (React native, react js and node js) mostly frontend is the list dsa is enough for frontend mostly light medium dsa
+
+- lets say we have todo app. where in we have api to fetch todos and also we have local storage to store locally when its offline. we also need to upload the todos to server and there is also one feature mandate when app is offline we need to save todos locally and when network is back or reopen the app and we have network it need to make the post request to send the data.
+
+- This was the system design question round asked for me (React native) 7YOE (RN, react js and node js) experience i have. Could you rephase it and also provide me more similar questions like it
+
+| Priority   | System design                          |
+| ---------- | -------------------------------------- |
+| ⭐⭐⭐⭐⭐ | Offline-first Todo / Notes             |
+| ⭐⭐⭐⭐⭐ | Chat application                       |
+| ⭐⭐⭐⭐⭐ | Token refresh + API layer              |
+| ⭐⭐⭐⭐⭐ | Large file upload/resumable upload     |
+| ⭐⭐⭐⭐   | Real-time location / ride booking      |
+| ⭐⭐⭐⭐   | Social media feed + caching            |
+| ⭐⭐⭐⭐   | Push notification system               |
+| ⭐⭐⭐⭐   | Mobile analytics/event queue           |
+| ⭐⭐⭐     | Large-scale RN architecture            |
+| ⭐⭐⭐     | Deep linking + notification navigation |

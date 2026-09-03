@@ -21,3 +21,23 @@ const getClone = (obj) => {
   return output;
 };
 console.log(getClone(obj));
+
+const clone = (obj) => {
+  if (typeof obj !== "object" || obj === null) {
+    return obj;
+  }
+
+  const output = {};
+
+  if (Array.isArray(obj)) {
+    return obj.map((val) => clone(val));
+  }
+
+  for (let key in obj) {
+    output[key] = clone(obj[key]);
+  }
+
+  return output;
+};
+
+console.log(clone(obj));
