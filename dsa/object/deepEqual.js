@@ -31,7 +31,6 @@ const deepEqual = (obj1, obj2) => {
   }
 
   const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
   for (let i = 0; i < keys1.length; i++) {
     const key = keys1[i];
     if (!(key in obj2)) return false;
