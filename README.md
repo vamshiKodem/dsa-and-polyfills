@@ -149,7 +149,7 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 - isAnagram.js
 - isLongestPalindrome.js
 - longestCommonPrefix.js
-- longestSubString.js
+- longestSubstringWithoutRepetition.js
 - longestSubstringWithKDistinctChars.js
 - maxFrequentChar.js
 - palindrome.js
