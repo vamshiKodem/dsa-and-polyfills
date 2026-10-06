@@ -3,7 +3,7 @@
 
 const str = "pwwkezrtyuiow";
 
-const longestSubString = (str) => {
+const longestSubstringWithoutRepetition = (str) => {
   let left = 0;
   let maxLength = 0;
   const map = new Map();
@@ -19,9 +19,9 @@ const longestSubString = (str) => {
   return maxLength;
 };
 
-console.log(longestSubString(str));
+console.log(longestSubstringWithoutRepetition(str));
 
-const longestSubstringChar = (str) => {
+const longestSubstringWithoutRepetition2 = (str) => {
   let left = 0;
   let map = new Map();
   let output = 0;
@@ -43,7 +43,7 @@ const longestSubstringChar = (str) => {
   return substring;
 };
 
-console.log(longestSubstringChar("abcabcbb"));
+console.log(longestSubstringWithoutRepetition2("abcabcbb"));
 
 const isUnique = (str) => {
   const hash = {};
@@ -55,7 +55,7 @@ const isUnique = (str) => {
   return true;
 };
 
-const longestSubstringChar = (str) => {
+const longestSubstringWithoutRepetition3 = (str) => {
   let output = "";
 
   for (let i = 0; i < str.length; i++) {
