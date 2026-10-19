@@ -1,24 +1,24 @@
 // 80. Remove Duplicates from Sorted Array II
 
-const removeDuplicates = (nums) => {
-  let len = 0;
+const nums = [1, 1, 1, 2, 2, 3];
+
+const removeDuplicatesSorted2 = (nums) => {
+  let k = 0;
   let counter = 0;
   for (let i = 0; i < nums.length; i++) {
-    if (i < nums.length - 1 && nums[i] !== nums[i + 1]) {
-      nums[len] = nums[i];
-      len++;
-      counter = 0;
+    const num = nums[i];
+    if (i === 0 || nums[i] !== nums[i - 1]) {
+      counter = 1;
     } else {
-      if (counter >= 1) {
-        continue;
-      } else {
-        nums[len] = nums[i];
-        len++;
-        counter++;
-      }
+      counter++;
+    }
+
+    if (counter <= 2) {
+      nums[k] = num;
+      k++;
     }
   }
-  return len;
+  return k;
 };
 
-removeDuplicates([1, 1, 1, 2, 2, 3]);
+console.log(removeDuplicatesSorted2(nums));
