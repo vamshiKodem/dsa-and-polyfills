@@ -168,7 +168,7 @@ This repo contains the easy and medium solutions for the dsa for Arrays and Stri
 - apiCache.js
 - Retry API
 
-I am frontend dev with 7YOE (React native, react js and node js) mostly frontend is the list dsa is enough for frontend mostly light medium dsa
+I am frontend dev with 8YOE (React native, react js and node js) mostly frontend is the list dsa is enough for frontend mostly light medium dsa
 
 - lets say we have todo app. where in we have api to fetch todos and also we have local storage to store locally when its offline. we also need to upload the todos to server and there is also one feature mandate when app is offline we need to save todos locally and when network is back or reopen the app and we have network it need to make the post request to send the data.
 
