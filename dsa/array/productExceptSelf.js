@@ -21,3 +21,23 @@ const productExceptSelf = (nums) => {
 };
 
 console.log(productExceptSelf(nums));
+
+const productExceptSelf = (nums) => {
+    const output = new Array(nums.length).fill(1);
+
+    let prefix = 1;
+    for(let i = 0; i < nums.length; i++){
+        output[i] = prefix;
+        prefix = prefix * nums[i];
+    }
+
+    let sufix = 1;
+    for(let i = nums.length - 1; i >= 0; i--){
+        output[i] = output[i] * sufix;
+        sufix = sufix * nums[i];
+    }
+
+    return output;
+}
+
+console.log(productExceptSelf([1, 2, 3, 4]))
