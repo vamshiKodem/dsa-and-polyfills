@@ -1,6 +1,24 @@
 // 3. Longest Substring Without Repeating Characters (M)
 // using sliding window
 
+const longest = (str) => {
+    let length = 0;
+    for(let i = 0; i < str.length; i++){
+        const map = new Map();
+        for(let j = i; j < str.length; j++){
+            if(map.has(str[j])){
+                break;
+            } else {
+                map.set(str[j], 1)
+            }
+            length = Math.max(length, map.size);
+        }
+    }
+    return length;
+}
+
+console.log(longest('abcabcbb'));
+
 const str = "pwwkezrtyuiow";
 
 const longestSubstringWithoutRepetition = (str) => {
